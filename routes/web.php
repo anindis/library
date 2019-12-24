@@ -12,13 +12,7 @@
 */
 
 Route::get('/', function () {
-    return view('welcome');
+    $books = \App\Book::all();
+
+    return view('welcome', ['books' => $books]);
 });
-
-Auth::routes();
-
-Route::get('/home', 'HomeController@index')->name('home');
-
-Auth::routes();
-
-Route::get('/home', 'HomeController@index')->name('home');
